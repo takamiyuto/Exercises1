@@ -1,10 +1,12 @@
 import java.util.Random;
-
+import java.util.Scanner;
 public class DiceRoll {
     int dice1, dice2;
     int sum;
+    String userName;
 
     DiceRoll() {
+        greeting();
         System.out.println("Rolling dice...");
         roll();
         System.out.println("Die 1: " + dice1);
@@ -19,6 +21,12 @@ public class DiceRoll {
         sum = dice1 + dice2;
     }
 
+    public void greeting(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("What is your name?\n>");
+        userName = sc.next();
+        System.out.println("Hello, "+userName+"!");
+    }
     public static void main(String arg[]) {
         new DiceRoll();
 
